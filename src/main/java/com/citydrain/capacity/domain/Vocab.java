@@ -58,4 +58,38 @@ public final class Vocab {
     public static final String REASON_NO_PARAM_VERSION = "NO_PARAMETER_VERSION_AT_AS_OF";
     public static final String REASON_GEOMETRY_MISSING = "GEOMETRY_MISSING";
     public static final String REASON_SLOPE_MISSING = "SLOPE_MISSING";
+
+    // ===== 复检信息价值（VOI） =====
+
+    // VOI 估计路线（两路线产出同一口径 evi，互不作为对方的预处理）
+    public static final String VOI_ENUMERATION = "ENUMERATION";   // 结果枚举法：离散结果 × 概率加权
+    public static final String VOI_SENSITIVITY = "SENSITIVITY";   // 局部敏感度法：观测不确定度上的近似筛选
+
+    // 复检候选状态
+    public static final String CAND_ACTIVE = "ACTIVE";
+    public static final String CAND_WITHDRAWN = "WITHDRAWN";
+
+    // 处置决定（来自外部状况评估版本，本平台不自行裁决）
+    public static final String DEC_REMEDIATE = "REMEDIATE";
+    public static final String DEC_MONITOR = "MONITOR";
+    public static final String DEC_NO_ACTION = "NO_ACTION";
+
+    // 枚举法可能结果
+    public static final String OUT_WORSE = "FIND_WORSE";          // 发现更严重
+    public static final String OUT_CONFIRM = "CONFIRM_CURRENT";   // 确认现状
+    public static final String OUT_REPAIRED = "FIND_REPAIRED";    // 发现已修复
+
+    // 低价值原因
+    public static final String LV_DECISION_IMMUTABLE = "DECISION_IMMUTABLE";                 // 任何结果都无法改变决定
+    public static final String LV_RESOLUTION_INSUFFICIENT = "RESOLUTION_INSUFFICIENT";       // 分辨率不足以区分相邻缺陷
+    public static final String LV_REPAIRED_ACCEPTED = "REPAIRED_ACCEPTED_COVERAGE";          // 已维修且完整验收覆盖
+    public static final String LV_OUTSIDE_ASSESSMENT = "NOT_COVERED_BY_ASSESSMENT";          // 评估版本未覆盖该位置
+
+    // 计划明细原因
+    public static final String PI_SELECTED = "SELECTED";
+    public static final String PI_BUDGET = "BUDGET_COMPETITION";
+    public static final String PI_SUPPLIER = "SUPPLIER_UNREACHABLE";
+    public static final String PI_RAINY = "RAINY_SEASON_BLOCKED";
+    public static final String PI_LOW_VALUE = "LOW_VALUE";
+    public static final String PI_REPAIRED = "REPAIRED_ACCEPTED";
 }

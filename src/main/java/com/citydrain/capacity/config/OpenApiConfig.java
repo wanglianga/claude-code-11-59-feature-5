@@ -24,6 +24,9 @@ public class OpenApiConfig {
                                 能力评估器对每段输出可通过流量区间、相对设计需求余量、主导不确定参数与
                                 不可判定原因；覆盖账本记录每次计算的参数与观测可用性；结果可按历史时点
                                 复算并供下游网络情景查询。两条评估路线（区间传播 / 校准情景集合）相互独立。
+                                复检信息价值（VOI）：对候选复检方案以结果枚举法或局部敏感度法估计预期信息价值，
+                                输出对整治排序/剩余风险长度/网络影响结论可缩小的范围与低价值检查，并在
+                                预算/供应商/雨季约束下生成可留痕的复检计划版本。
                                 """))
                 .addSecurityItem(new SecurityRequirement().addList(scheme))
                 .components(new Components().addSecuritySchemes(scheme,

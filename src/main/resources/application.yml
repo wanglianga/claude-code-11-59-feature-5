@@ -27,6 +27,21 @@ app:
     default-silt-max: 0.30         # 淤积率未知时假设的面积损失上界
     assumed-surcharge-m: 2.0       # 下游水位缺失时假设的出口壅水超高（米）
     alignment-tolerance-seconds: 600  # 校准样本时间对齐容差（流量/水位/降雨同一时刻判定）
+  voi:
+    # 复检信息价值估计参数（两路线共用，保证 evi 同口径可对照）
+    interval-sigma-divisor: 4.0       # 风险区间 [min,max] 视为 ±2σ → σ=宽度/4
+    conflict-inflation: 1.25          # 证据冲突时先验 σ 放大
+    low-value-decision-prob: 0.05     # 决策变化概率低于该值标记低价值
+    meas-base-risk-points: 3.0        # 测量不确定度基准（风险分，按方法分辨率/定位误差缩放）
+    reference-resolution-m: 0.005     # 参考方法分辨率（CCTV ≈ 5mm）
+    reference-location-error-m: 1.0
+    sensitivity-local-window-std: 1.5 # 敏感度法局部窗口（倍数 σ）
+    auto-enumeration-max-candidates: 12  # AUTO：≤12 候选走枚举法，否则敏感度法
+    repaired-risk-score: 10.0         # “发现已修复”后验风险分基准
+    weight:
+      decision: 0.60                  # evi 合成：处置决定变化
+      risk-length: 0.25               # evi 合成：剩余风险长度缩小
+      network: 0.15                   # evi 合成：网络影响结论缩小
 
 springdoc:
   swagger-ui:
